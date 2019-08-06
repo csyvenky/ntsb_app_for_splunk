@@ -1,0 +1,26 @@
+{
+    "modelName": "ntsb_w_Event_Date",
+    "displayName": "ntsb_w_Event_Date",
+    "description": "",
+    "objectSummary": {
+        "Event-Based": 0,
+        "Transaction-Based": 0,
+        "Search-Based": 1
+    },
+    "objects": [
+        {
+            "objectName": "RootObject",
+            "displayName": "ntsb_w_Event_Date",
+            "parentName": "BaseSearch",
+            "comment": "",
+            "fields": [],
+            "calculations": [],
+            "constraints": [],
+            "lineage": "RootObject",
+            "baseSearch": "(`ntsb_index` sourcetype=\"ntsb_csv\") | fields \"_time\", \"Airport Code\", \"Event Date\" | search \"Airport Code\" = \"*\" AND NOT \"Airport Code\" = \"\""
+        }
+    ],
+    "objectNameList": [
+        "RootObject"
+    ]
+}
