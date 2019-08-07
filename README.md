@@ -14,14 +14,13 @@ Splunk app to process NTSB Safety Data
 2. Click Install app from file.
 
 # Full data download workflow
-The raw data file can be downloaded and reformated to work with this app. There are two Jupyter Notebooks.
-- [data_set_download.ipynb] One that can be used to download the raw data file.
-- [data_set_cleanup.ipynb] One that be used to clean up the raw data file and export a data file for Splunk.
-The notebook is available from Github here: https://github.com/csyvenky/jupyter_for_all_ntsb
+The raw data file can be downloaded and reformated to work with this app. There are two Jupyter Notebooks to assist with the data cleanup. The app assumes the cleanup Jupyter Notebook has been run against the base CSV download. This notebook does some data cleansing, specifically reconfiguring the date formant and parsing the Location field into seperate City and State fields.
+1. [data_set_download.ipynb] - used to download the raw data file.
+2. [data_set_cleanup.ipynb] - used to clean up the raw data file and export a data file for Splunk.
+The notebook is available from [Github here](https://github.com/csyvenky/jupyter_for_all_ntsb)
 
 # Cleaning up the data
-The app assumes the Jupyter Notebook has been run against the base CSV download (see above for recommended method). This notebook does some data cleansing, specifically reconfiguring the date formant and the Location field - it parses it into City and State fields.
-The notebook is available from Github here: https://github.com/csyvenky/jupyter_for_all_ntsb
+
 
 # Credit for External Lookup Data
 The airport details data has been downloaded from OurAirports.com. More information on the project and the Public Domain licence can be found here: http://ourairports.com/data/
