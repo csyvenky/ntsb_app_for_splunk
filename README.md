@@ -18,14 +18,13 @@ A Splunk app to process NTSB Safety Data
 5. Click **Next**.
 6. For **Source type**, click **Custom**, then select **ntsb_csv**.
 7. Click **Next**.
-8. For **Index**, click **Create a new index**, I called mine "**ntsb_csv**", set **Max Size of Entire Index** to **50MB**, select **NTSB App for Splunk** for the **App** field.
+8. For **Index**, click **Create a new index**, set **Index Name** to **ntsb_csv**, set **Max Size of Entire Index** to **50MB**, set **App** to **NTSB App for Splunk**.
 9. Click **Save**.
 10. Click **Review**.
 11. Click **Submit**.
 
 # Access the main Dashboard
 1. Select **Apps** | **NTSB App for Splunk**.
-2. Select **NTSB App for Splunk Dashboard**.
 
 # Data Download and Cleanse Workflow
 To use this app, the raw data file from NTSB needs to be downloaded and reformatted. There are two Jupyter Notebooks to assist with the data cleanup. The app assumes the cleanup Jupyter Notebook has been run against the base CSV download. 
