@@ -1,8 +1,6 @@
 # NTSB App for Splunk
 A Splunk app to process NTSB Safety Data
 
-*This is a work in progress.*
-
 # Install app on Splunk Enterprise (standalone)
 1. Click the Settings gear icon next to **Apps** on the Launcher homepage.
 2. Click **Install app from file**.
@@ -33,7 +31,7 @@ To use this app, the raw data file from NTSB needs to be downloaded and reformat
 The notebook is available from [Github](https://github.com/csyvenky/jupyter_for_all_ntsb)
 
 # Credit for External Lookup Data
-The airport details data has been downloaded from **OurAirports.com**. More information on the project and the Public Domain licence can be found [here](http://ourairports.com/data/).
+The airport details data has been downloaded from **OurAirports.com**. More information on the project and the Public Domain license can be found [here](http://ourairports.com/data/).
 
 # Build details (for OS X)
 1. Clone github repo `git clone https://github.com/csyvenky/ntsb_app_for_splunk`.
