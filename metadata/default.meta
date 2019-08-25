@@ -52,3 +52,15 @@ owner = admin
 [transforms/OurAirports.com]
 access = read : [ * ], write : [ admin, power ]
 export = system
+
+### Data Models
+
+[datamodels/ntsb_dataset_for_ml]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+
+[models/ntsb_dataset_for_ml]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin

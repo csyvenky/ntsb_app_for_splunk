@@ -1,0 +1,408 @@
+{
+    "modelName": "ntsb_dataset_for_ml",
+    "displayName": "ntsb_dataset_for_ml",
+    "description": "",
+    "objectSummary": {
+        "Event-Based": 0,
+        "Transaction-Based": 0,
+        "Search-Based": 1
+    },
+    "objects": [
+        {
+            "objectName": "base_dataset",
+            "displayName": "base_dataset",
+            "parentName": "BaseSearch",
+            "comment": "",
+            "fields": [
+                {
+                    "fieldName": "date_year",
+                    "owner": "base_dataset",
+                    "type": "number",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "date_year",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "number_of_engines",
+                    "owner": "base_dataset",
+                    "type": "number",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "number_of_engines",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "total_uninjured",
+                    "owner": "base_dataset",
+                    "type": "number",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "total_uninjured",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "total_serious_injuries",
+                    "owner": "base_dataset",
+                    "type": "number",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "total_serious_injuries",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "total_minor_injuries",
+                    "owner": "base_dataset",
+                    "type": "number",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "total_minor_injuries",
+                    "comment": ""
+                },
+                {
+                    "fieldName": "total_fatal_injuries",
+                    "owner": "base_dataset",
+                    "type": "number",
+                    "fieldSearch": "",
+                    "required": false,
+                    "multivalue": false,
+                    "hidden": false,
+                    "editable": true,
+                    "displayName": "total_fatal_injuries",
+                    "comment": ""
+                }
+            ],
+            "calculations": [
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "state",
+                            "owner": "base_dataset",
+                            "type": "number",
+                            "fieldSearch": "",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "state",
+                            "comment": ""
+                        }
+                    ],
+                    "calculationID": "qobmsqz565",
+                    "owner": "base_dataset",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Eval",
+                    "expression": "case(State==\"CA\",0, \nState==\"TX\",1,\nState==\"FL\",2,\nState==\"AK\",3,\nState==\"AZ\",4,\nState==\"WA\",5,\nState==\"CO\",6,\nState==\"GA\",7,\nState==\"NY\",8,\nState==\"NC\",9,\nState==\"PA\",10,\nState==\"OR\",11,\nState==\"IL\",12,\nState==\"OH\",13,\nState==\"ID\",14,\nState==\"NV\",15,\nState==\"MI\",16,\nState==\"VA\",17,\nState==\"WI\",18,\nState==\"MO\",19)"
+                },
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "aircraft_category",
+                            "owner": "base_dataset",
+                            "type": "number",
+                            "fieldSearch": "",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "aircraft_category",
+                            "comment": ""
+                        }
+                    ],
+                    "calculationID": "6kyh1gcrvwj",
+                    "owner": "base_dataset",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Eval",
+                    "expression": "case(aircraft_category==\"Airplane\",0,\naircraft_category==\"Helicopter\",1,\naircraft_category==\"Glider\",2,\naircraft_category==\"Balloon\",3,\naircraft_category==\"Weight-Shift\",4,\naircraft_category==\"Gyrocraft\",5,\naircraft_category==\"Powered Parachute\",6,\naircraft_category==\"Gyroplane\",7,\naircraft_category==\"Ultralight\",8,\naircraft_category==\"Unknown\",9)"
+                },
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "aircraft_damage",
+                            "owner": "base_dataset",
+                            "type": "number",
+                            "fieldSearch": "",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "aircraft_damage",
+                            "comment": ""
+                        }
+                    ],
+                    "calculationID": "o6azk71ra0d",
+                    "owner": "base_dataset",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Eval",
+                    "expression": "case(aircraft_damage==\"Substantial\",0,\naircraft_damage==\"Destroyed\",1,\naircraft_damage==\"Minor\",2)"
+                },
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "airport_code",
+                            "owner": "base_dataset",
+                            "type": "number",
+                            "fieldSearch": "",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "airport_code",
+                            "comment": ""
+                        }
+                    ],
+                    "calculationID": "gmjohjka7td",
+                    "owner": "base_dataset",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Eval",
+                    "expression": "case(airport_code==\"NONE\",0, \nairport_code==\"PVT\",1,\nairport_code==\"APA\",2,\nairport_code==\"ORD\",3,\nairport_code==\"MRI\",4,\nairport_code==\"DEN\",5,\nairport_code==\"N/A\",6,\nairport_code==\"OSH\",7,\nairport_code==\"VNY\",8,\nairport_code==\"BJC\",9,\nairport_code==\"FFZ\",10,\nairport_code==\"DVT\",11,\nairport_code==\"PRC\",12,\nairport_code==\"LGB\",13,\nairport_code==\"VGT\",14,\nairport_code==\"None\",15,\nairport_code==\"CNO\",16,\nairport_code==\"MIA\",17,\nairport_code==\"LAX\",18,\nairport_code==\"LAL\",19)"
+                },
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "amateur_built",
+                            "owner": "base_dataset",
+                            "type": "number",
+                            "fieldSearch": "",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "amateur_built",
+                            "comment": ""
+                        }
+                    ],
+                    "calculationID": "0fp679emy7ql",
+                    "owner": "base_dataset",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Eval",
+                    "expression": "case(amateur_built==\"No\",0, \namateur_built==\"Yes\",1)"
+                },
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "broad_phase_of_flight",
+                            "owner": "base_dataset",
+                            "type": "number",
+                            "fieldSearch": "",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "broad_phase_of_flight",
+                            "comment": ""
+                        }
+                    ],
+                    "calculationID": "bqg2p2f7i7",
+                    "owner": "base_dataset",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Eval",
+                    "expression": "case(broad_phase_of_flight==\"LANDING\",0, \nbroad_phase_of_flight==\"TAKEOFF\",1,\nbroad_phase_of_flight==\"CRUISE\",2,\nbroad_phase_of_flight==\"MANEUVERING\",3,\nbroad_phase_of_flight==\"APPROACH\",4,\nbroad_phase_of_flight==\"TAXI\",5,\nbroad_phase_of_flight==\"CLIMB\",6,\nbroad_phase_of_flight==\"DESCENT\",7,\nbroad_phase_of_flight==\"GO-AROUND\",8,\nbroad_phase_of_flight==\"STANDING\",9,\nbroad_phase_of_flight==\"UNKNOWN\",10,\nbroad_phase_of_flight==\"OTHER\",11)"
+                },
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "country",
+                            "owner": "base_dataset",
+                            "type": "number",
+                            "fieldSearch": "",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "country",
+                            "comment": ""
+                        }
+                    ],
+                    "calculationID": "wp1jh4r3x2n",
+                    "owner": "base_dataset",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Eval",
+                    "expression": "case(Country==\"United States\",0, \nCountry==\"Canada\",1,\nCountry==\"Brazil\",2,\nCountry==\"Mexico\",3,\nCountry==\"United Kingdom\",4,\nCountry==\"Australia\",5,\nCountry==\"Bahamas\",6,\nCountry==\"France\",7,\nCountry==\"Germany\",8,\nCountry==\"Colombia\",9,\nCountry==\"Spain\",10,\nCountry==\"Italy\",11,\nCountry==\"Japan\",12,\nCountry==\"Venezuela\",13,\nCountry==\"Argentina\",14,\nCountry==\"Indonesia\",15,\nCountry==\"Ecuador\",16,\nCountry==\"Peru\",17,\nCountry==\"Russia\",18,\nCountry==\"Switzerland\",19)"
+                },
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "week_day",
+                            "owner": "base_dataset",
+                            "type": "number",
+                            "fieldSearch": "",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "week_day",
+                            "comment": ""
+                        }
+                    ],
+                    "calculationID": "r6q9r0j5yc",
+                    "owner": "base_dataset",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Eval",
+                    "expression": "case(date_wday==\"sunday\",0,\ndate_wday==\"monday\",1,\ndate_wday==\"tuesday\",2,\ndate_wday==\"wednesday\",3,\ndate_wday==\"thursday\",4,\ndate_wday==\"friday\",5,\ndate_wday==\"saturday\",6)"
+                },
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "engine_type",
+                            "owner": "base_dataset",
+                            "type": "number",
+                            "fieldSearch": "",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "engine_type",
+                            "comment": ""
+                        }
+                    ],
+                    "calculationID": "i2eny0agls",
+                    "owner": "base_dataset",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Eval",
+                    "expression": "case(engine_type==\"Reciprocating\",0, \nengine_type==\"Turbo Shaft\",1,\nengine_type==\"Turbo Prop\",2,\nengine_type==\"Turbo Fan\",3,\nengine_type==\"United Kingdom\",4,\nengine_type==\"Unknown\",5,\nengine_type==\"Turbo Jet\",6,\nengine_type==\"None\",7,\nengine_type==\"Electric\",8,\nengine_type==\"Hybrid Rocket\",9)"
+                },
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "far_description",
+                            "owner": "base_dataset",
+                            "type": "number",
+                            "fieldSearch": "",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "far_description",
+                            "comment": ""
+                        }
+                    ],
+                    "calculationID": "vy5cotcxm6",
+                    "owner": "base_dataset",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Eval",
+                    "expression": "case(far_description==\"Part 91: General Aviation\",0, \nfar_description==\"Part 137: Agricultural\",1,\nfar_description==\"Non-U.S., Non-Commercial\",2,\nfar_description==\"Part 135: Air Taxi & Commuter\",3,\nfar_description==\"Part 121: Air Carrier\",4,\nfar_description==\"Non-U.S., Commercial\",5,\nfar_description==\"Unknown\",6,\nfar_description==\"Part 129: Foreign\",7,\nfar_description==\"Public Use\",8,\nfar_description==\"Part 133: Rotorcraft Ext. Load\",9,\nfar_description==\"Public Aircraft\",10,\nfar_description==\"Part 91 Subpart K: Fractional\",11,\nfar_description==\"Armed Forces\",12,\nfar_description==\"Part 125: 20+ Pax,6000+ lbs\",13,\nfar_description==\"Part 103: Ultralight\",14,\nfar_description==\"Part 91F: Special Flt Ops.\",15,\nfar_description==\"Part 437: Commercial Space Flight\",16,\nfar_description==\"Part 107: Small UAS\",17)"
+                },
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "investigation_type",
+                            "owner": "base_dataset",
+                            "type": "number",
+                            "fieldSearch": "",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "investigation_type",
+                            "comment": ""
+                        }
+                    ],
+                    "calculationID": "tl2m16vd9um",
+                    "owner": "base_dataset",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Eval",
+                    "expression": "case(investigation_type==\"Accident\",0,\ninvestigation_type==\"Incident\",1)"
+                },
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "make",
+                            "owner": "base_dataset",
+                            "type": "number",
+                            "fieldSearch": "",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "make",
+                            "comment": ""
+                        }
+                    ],
+                    "calculationID": "f6w3289dxn8",
+                    "owner": "base_dataset",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Eval",
+                    "expression": "case(Make==\"Cessna\",0, \nMake==\"Piper\",1,\nMake==\"Robinson\",2,\nMake==\"Schleicher\",3,\nMake==\"PIPER\",4,\nMake==\"Air Tractor\",5,\nMake==\"Stoddard-Hamilton\",6,\nMake==\"Schempp Hirth\",7,\nMake==\"SWEARINGEN\",8,\nMake==\"ROBINSON HELICOPTER COMPANY\",9,\nMake==\"PIETENPOL\",10,\nMake==\"JONKER SAILPLANES\",11,\nMake==\"ICON\",12,\nMake==\"Diamond\",13,\nMake==\"DOUGLAS\",14,\nMake==\"Cirrus\",15,\nMake==\"Cameron\",16,\nMake==\"CONSOLIDATED VULTEE\",17,\nMake==\"Bell\",18,\nMake==\"Beech\",19)"
+                },
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "purpose_of_flight",
+                            "owner": "base_dataset",
+                            "type": "number",
+                            "fieldSearch": "",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "purpose_of_flight",
+                            "comment": ""
+                        }
+                    ],
+                    "calculationID": "gmwshaqgkxk",
+                    "owner": "base_dataset",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Eval",
+                    "expression": "case(purpose_of_flight==\"Personal\",0, \npurpose_of_flight==\"Instructional\",1,\npurpose_of_flight==\"Aerial Application\",2,\npurpose_of_flight==\"Business\",3,\npurpose_of_flight==\"Flight Test\",4,\npurpose_of_flight==\"Positioning\",5)"
+                },
+                {
+                    "outputFields": [
+                        {
+                            "fieldName": "weather_condition",
+                            "owner": "base_dataset",
+                            "type": "number",
+                            "fieldSearch": "",
+                            "required": false,
+                            "multivalue": false,
+                            "hidden": false,
+                            "editable": true,
+                            "displayName": "weather_condition",
+                            "comment": ""
+                        }
+                    ],
+                    "calculationID": "13uhg97pr53",
+                    "owner": "base_dataset",
+                    "editable": true,
+                    "comment": "",
+                    "calculationType": "Eval",
+                    "expression": "case(weather_condition==\"VMC\",0,\nweather_condition==\"IMC\",1)"
+                }
+            ],
+            "constraints": [],
+            "lineage": "base_dataset",
+            "baseSearch": "(`ntsb_index` sourcetype=\"ntsb_csv\")\n| rename \"Aircraft Category\" AS \"aircraft_category\"\n| rename \"Aircraft Damage\" AS \"aircraft_damage\"\n| rename \"Airport Code\" AS \"airport_code\"\n| rename \"Amateur Built\" AS \"amateur_built\"\n| rename \"Broad Phase of Flight\" AS \"broad_phase_of_flight\"\n| rename \"Engine Type\" AS \"engine_type\"\n| rename \"FAR Description\" AS \"far_description\"\n| rename \"Investigation Type\" AS \"investigation_type\"\n| rename \"Number of Engines\" AS \"number_of_engines\"\n| rename \"Purpose of Flight\" AS \"purpose_of_flight\"\n| rename \"Total Fatal Injuries\" AS \"total_fatal_injuries\"\n| rename \"Total Minor Injuries\" AS \"total_minor_injuries\"\n| rename \"Total Serious Injuries\" AS \"total_serious_injuries\"\n| rename \"Total Uninjured\" AS \"total_uninjured\"\n| rename \"Weather Condition\" AS \"weather_condition\""
+        }
+    ],
+    "objectNameList": [
+        "base_dataset"
+    ]
+}
