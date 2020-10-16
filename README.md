@@ -1,5 +1,5 @@
 # NTSB App for Splunk
-A Splunk app to process NTSB Safety Data
+A Splunk app to process NTSB Safety Data. This app now supports the Splunk Cloud platform.
 
 # Install app on Splunk Enterprise (standalone)
 1. Click the Settings gear icon next to **Apps** on the Launcher homepage.
@@ -33,9 +33,9 @@ The notebook is available from [Github](https://github.com/csyvenky/jupyter_for_
 # Credit for External Lookup Data
 The airport details data has been downloaded from **OurAirports.com**. More information on the project and the Public Domain license can be found [here](http://ourairports.com/data/).
 
-# Build details (for OS X)
+# Build details
 1. Clone github repo `git clone https://github.com/csyvenky/ntsb_app_for_splunk`.
 2. Make your enhancements and increase the Build and Version numbers in the ./default/app.conf file.
-3. Make a tarball of the app folder `tar --exclude='ntsb_app_for_splunk/.git' -czvf ntsb_app_for_splunk.tar.gz ntsb_app_for_splunk/`.
-4. Run AppInspect validation via Postman `http://dev.splunk.com/view/appinspect/SP-CAAAFDU`.
+3. Make a tarball of the app folder `tar --exclude='cadors_app_for_splunk/.vscode' --exclude='ntsb_app_for_splunk/.git' -czvf ntsb_app_for_splunk.tar.gz ntsb_app_for_splunk/`.
+4. Run AppInspect validation via Postman `https://dev.splunk.com/enterprise/docs/developapps/testvalidate/appinspect/splunkappinspectapi/runrequestspostman`.
 5. Test the app installation on clean instance of Splunk.
