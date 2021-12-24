@@ -36,6 +36,6 @@ The airport details data has been downloaded from **OurAirports.com**. More info
 # Build details
 1. Clone github repo `git clone https://github.com/csyvenky/ntsb_app_for_splunk`.
 2. Make your enhancements and increase the Build and Version numbers in the ./default/app.conf file.
-3. Make a tarball of the app folder `tar --exclude='cadors_app_for_splunk/.vscode' --exclude='ntsb_app_for_splunk/.git' -czvf ntsb_app_for_splunk.tar.gz ntsb_app_for_splunk/`.
+3. Make a tarball of the app folder `tar --exclude='ntsb_app_for_splunk/.vscode' --exclude='ntsb_app_for_splunk/.git*' --exclude='.DS_Store*' -czvf ntsb_app_for_splunk.tar.gz ntsb_app_for_splunk/`.
 4. Run AppInspect validation via Postman `https://dev.splunk.com/enterprise/docs/developapps/testvalidate/appinspect/splunkappinspectapi/runrequestspostman`.
 5. Test the app installation on clean instance of Splunk.
